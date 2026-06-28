@@ -153,7 +153,6 @@ st.divider()
 st.subheader("📍 우리 지역 청소년 복지 시설 위치 찾기 (인터랙티브 맵)")
 st.write("지도 위의 🔵 점에 마우스를 올리면 **시설의 진짜 이름**이 말풍선으로 나타납니다.")
 
-# 전국 주요 청소년 시설 실제 위치 및 타입 매칭 데이터
 map_data = pd.DataFrame({
     "lat": [37.5665, 37.5326, 37.4200, 37.5000, 37.2752, 35.1796, 35.8714, 37.4563, 35.1595, 36.3504, 36.4801, 33.4996],
     "lon": [126.9780, 127.0246, 127.1000, 126.9000, 127.0095, 129.0756, 128.6014, 126.7052, 126.8526, 127.3845, 127.2890, 126.5312],
@@ -169,17 +168,15 @@ map_data = pd.DataFrame({
     ]
 })
 
-# pydeck을 활용한 말풍선 레이어 프로그래밍
 layer = pdk.Layer(
     "ScatterplotLayer",
     map_data,
     get_position="[lon, lat]",
     get_color="[77, 150, 255, 160]",  # 예쁜 파란색 포인트 점
-    get_radius=20000,                  # 지도 크기에 맞는 적절한 점 크기
-    pickable=True,                     # 마우스 올렸을 때 반응하도록 설정 (필수!)
+    get_radius=20000,                  # 점 크기
+    pickable=True,                     # 마우스 반응 활성화
 )
 
-# 대한민국 중심점으로 지도의 첫 화면 고정
 view_state = pdk.ViewState(
     latitude=36.3,
     longitude=127.8,
@@ -187,14 +184,12 @@ view_state = pdk.ViewState(
     pitch=0,
 )
 
-# 지도 출력 및 말풍선 텍스트 양식 구성
 st.pydeck_chart(pdk.Deck(
     layers=[layer],
     initial_view_state=view_state,
-    tooltip={"text": "🏢 시설명: {name}\n📌 구분: {type}"}  # 마우스 올렸을 때 뜰 말풍선 양식
+    tooltip={"text": "🏢 시설명: {name}\n📌 구분: {type}"}  # 말풍선 포맷 설정
 ))
 
-# 지도 밑 상세 표 안내
 st.write("📋 **지도에 등록된 전국 주요 청소년 복지시설 상세 목록 안내**")
 df_info_table = pd.DataFrame({
     "시설 및 기관명": map_data["name"],
