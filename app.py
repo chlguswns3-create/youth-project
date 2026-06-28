@@ -93,4 +93,4 @@ with col1:
         st.plotly_chart(fig_exp, use_container_width=True)
         
         fig_freq = px.bar(df_freq, x="빈도", y="비율(%)", text="비율(%)", title="가정 밖 생활 경험 청소년의 반복 빈도",
-                          color="빈도", color_discrete_sequence=px.colors.sequential
+                          color="빈도", color_discrete_sequence=px.colors.sequential)
