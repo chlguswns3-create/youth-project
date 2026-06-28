@@ -116,7 +116,7 @@ with col2:
         * **근거 법률:** 청소년복지 지원법 제16조 (위기청소년 특별지원 및 쉼터 운영)
         * **상담 전화:** 📞 국번없이 1388
         """)
-        st.link_button("👉 청소년전화 1388 공식 사이트 이동", "www.dreamforten.co.kr")
+        st.link_button("👉 청소년전화 1388 공식 사이트 이동", "http://www.dreamforten.co.kr")
         
     elif crisis == "학교폭력 및 사이버불링 (도란도란)":
         st.warning("🏫 **도란도란 (학교폭력 예방 누리집)**")
