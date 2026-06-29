@@ -61,7 +61,7 @@ raw_data = {
     }
 }
 
-# 3. 사이드바 인터랙티브 필터 구성
+# 3. 사이드바 인터랙티브 구성
 st.sidebar.header("🔍 통계 데이터 필터링")
 st.sidebar.write("분석하고 싶은 청소년 대상 그룹을 선택하세요.")
 selected_group = st.sidebar.selectbox(
