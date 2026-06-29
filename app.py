@@ -4,6 +4,21 @@ import plotly.express as px
 
 # 1. 웹 페이지 기본 설정
 st.set_page_config(page_title="청소년 복지 통합 허브", layout="wide")
+
+# 🌟 전체 배경색 및 사이드바 색상을 따뜻하게 바꾸는 커스텀 CSS 적용
+st.markdown("""
+<style>
+/* 전체 메인 화면 배경색 (따뜻한 아이보리 톤) */
+.stApp {
+    background-color: #FDFBF7;
+}
+/* 왼쪽 사이드바 배경색 (살짝 더 진한 베이지 톤) */
+[data-testid="stSidebar"] {
+    background-color: #F4F1EA;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📊 청소년 복지시설 및 상담센터 이용률 증진을 위한 통합 홍보 플랫폼")
 st.caption("빅데이터경영공학 전공 & 청소년복지론 융합 프로젝트 (여성가족부 2024 실태조사 데이터 반영)")
 
