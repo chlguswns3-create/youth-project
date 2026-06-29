@@ -5,6 +5,25 @@ import plotly.express as px
 # 1. 웹 페이지 기본 설정
 st.set_page_config(page_title="청소년 복지 통합 허브", layout="wide")
 
+# 🌟 배경을 학교 관련 사진 + 반투명 필터로 변경하는 커스텀 CSS 적용
+st.markdown("""
+<style>
+/* 전체 메인 화면 배경에 학교 이미지 깔기 & 글씨 가독성을 위해 하얀색 반투명 필터(85%) 레이어 겹치기 */
+.stApp {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                     url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* 왼쪽 사이드바 배경색 (조화를 위해 살짝 투명도 있는 베이지 톤) */
+[data-testid="stSidebar"] {
+    background-color: rgba(244, 241, 234, 0.9);
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📊 청소년 복지시설 및 상담센터 이용률 증진을 위한 통합 홍보 플랫폼")
 st.caption("빅데이터경영공학 전공 & 청소년복지론 융합 프로젝트 (여성가족부 2024 실태조사 데이터 반영)")
 
