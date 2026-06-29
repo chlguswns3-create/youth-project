@@ -17,6 +17,12 @@ st.markdown("""
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/* 2. 다크모드로 바뀌어도 글씨가 하얗게 변하지 않도록 기본 텍스트 색상을 진한 회색으로 강제 고정 */
+.stApp, .stApp p, .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6, .stApp label, .stApp div, .stApp span {
+    color: #31333F !important;
+}
+
 /* 왼쪽 사이드바 배경색 (조화를 위해 살짝 투명도 있는 베이지 톤) */
 [data-testid="stSidebar"] {
     background-color: rgba(244, 241, 234, 0.9);
